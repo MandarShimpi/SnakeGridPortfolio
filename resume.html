@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandar Shimpi | Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #335c15;
+            --primary-light: #4a752c;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                background-color: white;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background-color: #f1f5f9;
+            padding: 40px;
+            border-right: 1px solid var(--border);
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: white;
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        .project-card {
+            margin-bottom: 2rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .project-link {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .experience-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .experience-org {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print fixed top-6 right-6 z-50 flex gap-3">
+        <button onclick="window.print()" class="bg-white text-slate-800 px-4 py-2 rounded-lg shadow-md font-semibold flex items-center gap-2 hover:bg-slate-50 transition-all border border-slate-200">
+            <span class="material-symbols-outlined text-sm">print</span>
+            Save as PDF
+        </button>
+        <button onclick="window.location.href='index.html'" class="bg-primary text-white px-4 py-2 rounded-lg shadow-md font-semibold flex items-center gap-2 hover:brightness-110 transition-all">
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+            Back to Portfolio
+        </button>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header-section">
+            <img src="mandar_profile.jpg" alt="Mandar Shimpi" class="profile-img">
+            <div>
+                <h1 class="text-5xl font-black mb-2 tracking-tight">Mandar Shimpi</h1>
+                <p class="text-xl font-medium opacity-90 mb-6">Aspiring Data Scientist & CSE Student</p>
+                <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm opacity-80">
+                    <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-base">location_on</span>
+                        Pune, India
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-base">mail</span>
+                        shimpimandar01@gmail.com
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-base">language</span>
+                        <a href="https://github.com/MandarShimpi" class="hover:underline">github.com/MandarShimpi</a>
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-base">link</span>
+                        <a href="https://linkedin.com/in/shimpimandar/" class="hover:underline">linkedin.com/in/shimpimandar</a>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Education -->
+                <section class="mb-10">
+                    <h2 class="section-title">Education</h2>
+                    <div class="mb-6">
+                        <p class="font-bold text-slate-900">B.Tech in CSE</p>
+                        <p class="text-sm text-primary font-semibold">COEP Technological University, Pune</p>
+                        <p class="text-xs text-slate-500">2024 — 2028 (Expected)</p>
+                        <p class="text-xs mt-2 italic text-slate-600">AIR 21 in MHT CET</p>
+                    </div>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="mb-10">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="mb-6">
+                        <p class="text-xs font-bold text-slate-500 uppercase mb-2">Languages</p>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-xs font-bold text-slate-500 uppercase mb-2">AI & ML</p>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">Transformers</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Computer Vision</span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <p class="text-xs font-bold text-slate-500 uppercase mb-2">Data & MLOps</p>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pinecone</span>
+                            <span class="skill-tag">MLflow</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section>
+                    <h2 class="section-title">Languages</h2>
+                    <div class="text-sm space-y-1">
+                        <p><span class="font-bold">English</span> (Professional)</p>
+                        <p><span class="font-bold">Hindi</span> (Native)</p>
+                        <p><span class="font-bold">Marathi</span> (Native)</p>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Profile Summary -->
+                <section class="mb-12">
+                    <h2 class="section-title">Profile</h2>
+                    <p class="text-slate-700">
+                        Aspiring Data Scientist with a strong foundation in mathematical modeling and statistics. Secure All India Rank 21 in MHT CET and currently pursuing B.Tech in CSE at COEP Pune. Passionate about building intelligent systems through rigorous algorithms and intentional data pipelines. Experienced in developing AI-powered solutions and optimizing machine learning models for high-impact performance.
+                    </p>
+                </section>
+
+                <!-- Featured Projects -->
+                <section class="mb-12">
+                    <h2 class="section-title">Projects</h2>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Resume Screener Pro</h3>
+                            <a href="https://github.com/MandarShimpi/resume-screener-pro" class="project-link flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                GitHub
+                            </a>
+                        </div>
+                        <p class="text-sm text-slate-700">
+                            Developed an advanced, AI-powered Streamlit dashboard using Semantic Embeddings (SentenceTransformers) to instantly scan and rank candidate resumes against job descriptions with high semantic accuracy.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Snake Grid Portfolio</h3>
+                            <a href="https://github.com/MandarShimpi/SnakeGridPortfolio" class="project-link flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                GitHub
+                            </a>
+                        </div>
+                        <p class="text-sm text-slate-700">
+                            Created an interactive, gamified portfolio website featuring a custom-built game engine, theme manager, and Web Audio API synthesis for a unique user experience.
+                        </p>
+                    </div>
+
+                </section>
+
+                <!-- Interests -->
+                <section>
+                    <h2 class="section-title">Core Interests</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">analytics</span>
+                            <span class="text-sm font-medium text-slate-700">Predictive Analytics</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                            <span class="text-sm font-medium text-slate-700">Deep Learning</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">functions</span>
+                            <span class="text-sm font-medium text-slate-700">Mathematical Modeling</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">terminal</span>
+                            <span class="text-sm font-medium text-slate-700">Algorithmic Optimization</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-slate-50 border-t border-slate-200 py-6 px-10 text-center">
+            <p class="text-xs text-slate-500 font-medium">Mandar Shimpi | Resume</p>
+        </footer>
+    </div>
+
+</body>
+</html>
