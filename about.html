@@ -286,11 +286,11 @@
 <div class="h-full bg-primary w-1/4 rounded-sm progress-segment"></div>
 <div class="h-full bg-primary w-1/4 rounded-sm progress-segment"></div>
 <div class="h-full bg-primary w-1/4 rounded-sm progress-segment"></div>
-<div class="h-full bg-surface-dim w-1/4 rounded-sm progress-segment"></div>
+<div class="h-full bg-primary w-1/4 rounded-sm progress-segment"></div>
 </div>
 <div class="text-right">
-<span class="font-headline-md text-primary"><span id="progress-percent">75%</span></span>
-<span class="block font-label-bold text-outline">LVL 4 DEVELOPER</span>
+<span class="font-headline-md text-primary"><span id="progress-percent">85%</span></span>
+<span class="block font-label-bold text-outline">LVL 5 DEVELOPER</span>
 </div>
 </div>
 </div>
@@ -328,15 +328,17 @@
             el.textContent = `Progress: ${count}/${total}`;
         });
 
-        // Update about.html specific progress bar if exists
+        // Set static professional progress
         const percentText = document.getElementById('progress-percent');
         if (percentText) {
-            const percent = Math.round((count / total) * 100);
-            percentText.textContent = `${percent}%`;
+            const staticPercent = 85;
+            percentText.textContent = `${staticPercent}%`;
             
             const bars = document.querySelectorAll('.progress-segment');
+            const fillCount = Math.round((staticPercent / 100) * bars.length);
+            
             bars.forEach((bar, idx) => {
-                if (idx < count) {
+                if (idx < fillCount) {
                     bar.classList.remove('bg-surface-dim');
                     bar.classList.add('bg-primary');
                 } else {
