@@ -185,7 +185,7 @@
 <a class="text-[#4A752C] border-b-2 border-[#4A752C] pb-1" href="about.html">About</a>
 <a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="projects.html">Projects</a>
 <a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="skills.html">Skills</a>
-<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="contact.html">Socials</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="resume.html">Resume</a>
 <a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-4">
@@ -295,6 +295,15 @@
 <span class="font-label-bold text-[10px] text-primary uppercase">Contact</span>
 </div>
 </div>
+<!-- Resume Apple -->
+<div class="portal-node absolute group cursor-pointer" data-url="resume.html">
+<div class="w-[40px] h-[40px] bg-tertiary border-2 border-tertiary-container rounded-sm flex items-center justify-center apple-shadow hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div class="absolute top-12 left-1/2 -translate-x-1/2 bg-[var(--surface-lowest)] border border-[var(--border-color)] px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<span class="font-label-bold text-[10px] text-primary uppercase">Resume</span>
+</div>
+</div>
 
 <!-- Start Screen -->
 <div id="start-screen" class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm z-40 flex flex-col items-center justify-center text-white transition-opacity duration-300">
@@ -340,7 +349,7 @@
 <a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="https://github.com/MandarShimpi" target="_blank">GitHub</a>
 <a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="https://www.linkedin.com/in/shimpimandar/" target="_blank">LinkedIn</a>
 <a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="contact.html" href="https://x.com/_ShimpiMandar" target="_blank">X</a>
-<a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="contact.html">Resume</a>
+<a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="resume.html" target="_blank">Resume</a>
 </div>
 </div>
 </footer>
@@ -488,7 +497,8 @@
                 {x: Math.floor(cols * 0.7), y: Math.floor(rows * 0.2)}, // Projects
                 {x: Math.floor(cols * 0.4), y: Math.floor(rows * 0.7)}, // Skills
                 {x: Math.floor(cols * 0.8), y: Math.floor(rows * 0.8)}, // Socials
-                {x: Math.floor(cols * 0.9), y: Math.floor(rows * 0.4)}  // Contact
+                {x: Math.floor(cols * 0.9), y: Math.floor(rows * 0.4)}, // Contact
+                {x: Math.floor(cols * 0.6), y: Math.floor(rows * 0.5)}  // Resume
             ];
 
             portals.forEach((portal, idx) => {
