@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MANDAR_PORTFOLIO | MANDAR.EXE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+
+        :root {
+            --bg-color: #eeffdc;
+            --text-color: #0a2000;
+            --text-muted: #43493c;
+            --primary-color: #335c15;
+            --primary-container: #4a752c;
+            --on-primary-container: #c7faa1;
+            --surface-color: #eeffdc;
+            --surface-bright: #eeffdc;
+            --surface-lowest: #ffffff;
+            --surface-container: #c4ff99;
+            --surface-dim: #b1ea88;
+            --grid-color: rgba(0,0,0,0.05);
+            --border-color: #c3c9b8;
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --card-bg: #ffffff;
+            --shadow-color: var(--shadow-color);
+            --hard-shadow-color: var(--hard-shadow-color);
+        }
+        .dark {
+            --bg-color: #0a1405;
+            --text-color: #e0f0d0;
+            --text-muted: #a0b090;
+            --primary-color: #a3d47f;
+            --primary-container: #285009;
+            --on-primary-container: #bff199;
+            --surface-color: #12200a;
+            --surface-bright: #12200a;
+            --surface-lowest: #050a02;
+            --surface-container: #1a2e0e;
+            --surface-dim: #1a2e0e;
+            --grid-color: rgba(255,255,255,0.05);
+            --border-color: #2d3824;
+            --header-bg: rgba(10, 20, 5, 0.9);
+            --card-bg: #0d1a07;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --hard-shadow-color: #000000;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grid-background {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                              linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+        }
+        .snake-segment-shadow {
+            box-shadow: inset -4px -4px 0px rgba(0,0,0,0.1);
+        }
+        .apple-shadow {
+            box-shadow: 4px 4px 0px var(--shadow-color);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "var(--text-muted)",
+                      "error": "#ba1a1a",
+                      "outline-variant": "var(--border-color)",
+                      "surface-bright": "var(--surface-bright)",
+                      "surface-container-lowest": "var(--surface-lowest)",
+                      "surface-dim": "var(--surface-dim)",
+                      "primary": "var(--primary-color)",
+                      "background": "var(--bg-color)",
+                      "surface-container": "var(--surface-container)",
+                      "tertiary-fixed": "#ffdad5",
+                      "on-primary-fixed-variant": "#285009",
+                      "on-tertiary-fixed": "#410000",
+                      "primary-fixed-dim": "#a3d47f",
+                      "tertiary": "#a21911",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#a6d64d",
+                      "on-primary-fixed": "#0a2000",
+                      "primary-container": "var(--primary-container)",
+                      "inverse-surface": "#163800",
+                      "on-error": "#ffffff",
+                      "on-background": "var(--text-color)",
+                      "secondary-fixed": "#c2f366",
+                      "inverse-primary": "#a3d47f",
+                      "secondary": "#496800",
+                      "surface-container-low": "#daffbb",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed": "#131f00",
+                      "surface": "var(--surface-color)",
+                      "surface-variant": "#b9f38f",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "var(--text-color)",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#3f6921",
+                      "inverse-on-surface": "#cfffaa",
+                      "tertiary-container": "#c53327",
+                      "secondary-container": "#c2f366",
+                      "surface-container-high": "#bef994",
+                      "tertiary-fixed-dim": "#ffb4a9",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#b9f38f",
+                      "on-secondary-fixed-variant": "#364e00",
+                      "on-secondary-container": "var(--hard-shadow-color)",
+                      "on-primary-container": "var(--on-primary-container)",
+                      "on-tertiary-fixed-variant": "#910807",
+                      "outline": "#73796b",
+                      "primary-fixed": "#bff199",
+                      "on-tertiary-container": "#ffe6e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-sm": "16px",
+                      "container-max": "1200px",
+                      "base-unit": "8px",
+                      "gutter": "1px",
+                      "grid-tile": "40px",
+                      "margin-md": "24px"
+              },
+              "fontFamily": {
+                      "label-bold": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+
+<script id="theme-manager">
+    (function() {
+        const theme = localStorage.getItem('theme') || 'system';
+        const html = document.documentElement;
+        
+        function applyTheme(t) {
+            if (t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                html.classList.remove('light');
+            } else {
+                html.classList.remove('dark');
+                html.classList.add('light');
+            }
+        }
+        
+        applyTheme(theme);
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (localStorage.getItem('theme') === 'system') {
+                applyTheme('system');
+            }
+        });
+    })();
+</script>
+
+</head>
+<body class="transition-colors duration-300 bg-background text-on-background font-body-lg overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-[var(--surface-lowest)] dark:bg-stone-950 border-b-2 border-[var(--border-color)] dark:border-stone-900 sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-black text-[#4A752C] tracking-tighter">MANDAR_PORTFOLIO</div>
+<div class="hidden md:flex items-center gap-8 font-label-bold uppercase tracking-widest text-sm font-bold">
+<a class="text-[#4A752C] border-b-2 border-[#4A752C] pb-1" href="about.html">About</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="projects.html">Projects</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="skills.html">Skills</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="contact.html">Socials</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-on-background dark:hover:text-stone-100 transition-colors" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+
+<div class="flex items-center gap-1 bg-stone-100 dark:bg-stone-900 p-1 rounded-lg border border-[var(--border-color)] dark:border-[var(--border-color)]">
+    <button onclick="setTheme('light')" id="theme-light" class="p-1.5 rounded-md transition-all hover:bg-[var(--surface-lowest)] dark:hover:bg-stone-800 text-[var(--text-muted)] [&.active]:text-primary [&.active]:bg-[var(--surface-lowest)] [&.active]:shadow-sm">
+        <span class="material-symbols-outlined text-[18px]">light_mode</span>
+    </button>
+    <button onclick="setTheme('dark')" id="theme-dark" class="p-1.5 rounded-md transition-all hover:bg-[var(--surface-lowest)] dark:hover:bg-stone-800 text-[var(--text-muted)] [&.active]:text-primary [&.active]:bg-stone-800 [&.active]:shadow-sm">
+        <span class="material-symbols-outlined text-[18px]">dark_mode</span>
+    </button>
+    <button onclick="setTheme('system')" id="theme-system" class="p-1.5 rounded-md transition-all hover:bg-[var(--surface-lowest)] dark:hover:bg-stone-800 text-[var(--text-muted)] [&.active]:text-primary [&.active]:bg-[var(--surface-lowest)] dark:[&.active]:bg-stone-800 [&.active]:shadow-sm">
+        <span class="material-symbols-outlined text-[18px]">desktop_windows</span>
+    </button>
+</div>
+
+<script>
+    function setTheme(t) {
+        localStorage.setItem('theme', t);
+        const html = document.documentElement;
+        const applyTheme = (theme) => {
+            if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                html.classList.remove('light');
+            } else {
+                html.classList.remove('dark');
+                html.classList.add('light');
+            }
+        };
+        applyTheme(t);
+        updateThemeUI(t);
+    }
+
+    function updateThemeUI(t) {
+        document.querySelectorAll('[id^="theme-"]').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById('theme-' + t);
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateThemeUI(localStorage.getItem('theme') || 'system');
+    });
+</script>
+
+<button class="material-symbols-outlined text-[var(--text-muted)] hover:bg-[var(--bg-color)] p-2 transition-colors active:scale-95 duration-75">videogame_asset</button>
+<button class="material-symbols-outlined text-[var(--text-muted)] hover:bg-[var(--bg-color)] p-2 transition-colors active:scale-95 duration-75">trophy</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center p-6 md:p-12">
+<!-- Game Board Container -->
+<div class="relative w-full max-w-4xl aspect-[4/3] md:aspect-[16/9] bg-[var(--surface-bright)] border-4 border-primary-container rounded-lg overflow-hidden grid-background shadow-2xl flex flex-col">
+<!-- In-Game Header (Mandar.exe) -->
+<div class="bg-primary-container text-on-primary-container px-4 py-2 flex justify-between items-center z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span class="font-label-bold tracking-widest text-xs uppercase">Mandar.exe</span>
+</div>
+<div class="font-label-bold text-xs uppercase tracking-widest"><span class="progress-text progress-text">Progress: 0/5</span></div>
+</div>
+<!-- Tile Grid Content -->
+<div id="game-board" class="relative flex-grow overflow-hidden">
+
+<!-- Apples (Interactive Nodes) -->
+<!-- About Me Apple -->
+<div class="portal-node absolute group cursor-pointer" data-url="about.html">
+<div class="w-[40px] h-[40px] bg-tertiary border-2 border-tertiary-container rounded-sm flex items-center justify-center apple-shadow hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div class="absolute top-12 left-1/2 -translate-x-1/2 bg-[var(--surface-lowest)] border border-[var(--border-color)] px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<span class="font-label-bold text-[10px] text-primary uppercase">About Me</span>
+</div>
+</div>
+<!-- Projects Apple -->
+<div class="portal-node absolute group cursor-pointer" data-url="projects.html">
+<div class="w-[40px] h-[40px] bg-tertiary border-2 border-tertiary-container rounded-sm flex items-center justify-center apple-shadow hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+</div>
+<div class="absolute top-12 left-1/2 -translate-x-1/2 bg-[var(--surface-lowest)] border border-[var(--border-color)] px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<span class="font-label-bold text-[10px] text-primary uppercase">Projects</span>
+</div>
+</div>
+<!-- Skills Apple -->
+<div class="portal-node absolute group cursor-pointer" data-url="skills.html">
+<div class="w-[40px] h-[40px] bg-tertiary border-2 border-tertiary-container rounded-sm flex items-center justify-center apple-shadow hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="absolute top-12 left-1/2 -translate-x-1/2 bg-[var(--surface-lowest)] border border-[var(--border-color)] px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<span class="font-label-bold text-[10px] text-primary uppercase">Skills</span>
+</div>
+</div>
+<!-- Socials Apple -->
+<div class="portal-node absolute group cursor-pointer" data-url="contact.html">
+<div class="w-[40px] h-[40px] bg-tertiary border-2 border-tertiary-container rounded-sm flex items-center justify-center apple-shadow hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">share</span>
+</div>
+<div class="absolute top-12 left-1/2 -translate-x-1/2 bg-[var(--surface-lowest)] border border-[var(--border-color)] px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<span class="font-label-bold text-[10px] text-primary uppercase">Socials</span>
+</div>
+</div>
+<!-- Contact Apple -->
+<div class="portal-node absolute group cursor-pointer" data-url="contact.html">
+<div class="w-[40px] h-[40px] bg-tertiary border-2 border-tertiary-container rounded-sm flex items-center justify-center apple-shadow hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<div class="absolute top-12 left-1/2 -translate-x-1/2 bg-[var(--surface-lowest)] border border-[var(--border-color)] px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+<span class="font-label-bold text-[10px] text-primary uppercase">Contact</span>
+</div>
+</div>
+
+<!-- Start Screen -->
+<div id="start-screen" class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm z-40 flex flex-col items-center justify-center text-white transition-opacity duration-300">
+    <h2 class="text-3xl font-black text-primary-fixed mb-2 font-['Inter'] tracking-widest text-center animate-pulse">PRESS ANY KEY TO START</h2>
+</div>
+
+<!-- Game Over Screen -->
+<div id="game-over-screen" class="hidden absolute inset-0 bg-stone-900/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center text-white">
+    <h2 class="text-4xl font-black text-primary-fixed mb-2 font-['Inter'] tracking-widest">SYSTEM FAILURE</h2>
+    <p class="text-stone-300 font-label-bold uppercase tracking-widest mb-6">Collision Detected. Snake Reset.</p>
+    <button id="restart-btn" class="bg-primary text-on-primary font-label-bold uppercase px-8 py-3 rounded hover:bg-primary-container active:scale-95 transition-all shadow-lg border border-primary-fixed">Reboot System</button>
+</div>
+
+<!-- Decorative Grid Elements (Bento Cards) -->
+<div id="system-log" class="hidden lg:block absolute bottom-4 left-4 transition-opacity duration-300 w-64 p-4 bg-[var(--surface-lowest)]/80 backdrop-blur-sm border border-[var(--border-color)] rounded-lg">
+<p class="font-label-bold text-[10px] text-primary-container mb-2 uppercase">System Log</p>
+<div class="space-y-1 font-body-sm text-[12px] text-[var(--text-muted)]">
+<p>&gt; Initializing Mandar.exe...</p>
+<p>&gt; Environment: Verdant Grid</p>
+<p>&gt; User: Guest_01</p>
+<p>&gt; Status: Awaiting Navigation</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Section -->
+<div class="mt-12 text-center max-w-xl">
+<h1 class="font-headline-lg text-primary mb-4">Navigating the digital grid.</h1>
+<p class="font-body-lg text-[var(--text-muted)]">Welcome to my portfolio. Use the grid nodes to explore my work, skills, and background. Every block represents a step in my development journey.</p>
+<div class="mt-8 flex gap-4 justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 font-label-bold rounded-lg uppercase tracking-widest active:scale-95 transition-all">Start Journey</button>
+<button onclick="window.open('https://github.com/MandarShimpi', '_blank')" class="bg-surface-container-high text-on-secondary-container border border-[var(--border-color)] px-8 py-3 font-label-bold rounded-lg uppercase tracking-widest active:scale-95 transition-all">View Github</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[var(--bg-color)] dark:bg-stone-900 border-t border-[var(--border-color)] dark:border-[var(--border-color)]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-6 gap-4 max-w-screen-2xl mx-auto">
+<div class="font-['Inter'] text-xs font-medium uppercase tracking-wider text-[var(--text-muted)] dark:text-[var(--text-muted)]">
+                © 2024 GRID_LOGIC. PRESS START TO CONTINUE.
+            </div>
+<div class="flex gap-8 font-['Inter'] text-xs font-medium uppercase tracking-wider">
+<a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="https://github.com/MandarShimpi" target="_blank">GitHub</a>
+<a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="https://www.linkedin.com/in/shimpimandar/" target="_blank">LinkedIn</a>
+<a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="contact.html" href="https://x.com/_ShimpiMandar" target="_blank">X</a>
+<a class="text-[var(--text-muted)] hover:text-[#4A752C] transition-colors hover:underline decoration-2 underline-offset-4" href="contact.html">Resume</a>
+</div>
+</div>
+</footer>
+<!-- Decorative Corner Element -->
+<div class="fixed bottom-4 right-4 z-0 opacity-10 pointer-events-none">
+<img alt="Retro Game UI Decor" class="w-48 h-48" data-alt="A minimalist digital illustration of a retro-style joystick rendered in a flat, modern pixel art aesthetic. The design uses a sophisticated palette of deep moss greens and soft creamy whites to match a professional light-mode UI. The object is clean and geometric, floating in a void, symbolizing nostalgic gaming culture integrated with contemporary design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd5J1YhVXmQSq947mH7dS2mDdiZTy9AqAklrZmghS1QIHtuL5werIkKxOm8bJaBcjJfwBM8z-PktntyHUDknpa02Lrg8waGBHY5UxXaGqnMNf_kM-zHR2dCxACnfl9trF2Q5Chj4DsdMP2m3Yxl23JEx37MiUfM-FuHZLigIB7whmVPyPcNXVObNa_GYIHzmcP2Bs2yeT7B2e6b4sYBU7-F50Y0l_DiZ4Rvq3riowu7nf9I4MeM9iZuThC1F03Z3htox1p5wMTr81Q"/>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const board = document.getElementById("game-board");
+        const gameOverScreen = document.getElementById("game-over-screen");
+        const startScreen = document.getElementById("start-screen");
+        const systemLog = document.getElementById("system-log");
+        const restartBtn = document.getElementById("restart-btn");
+        const portals = document.querySelectorAll(".portal-node");
+        
+        const GRID_SIZE = 40;
+        let snake = [];
+        let direction = {x: 1, y: 0};
+        let nextDirection = {x: 1, y: 0};
+        let gameInterval = null;
+        let boardWidth = 0;
+        let boardHeight = 0;
+        let isGameOver = false;
+        let hasStarted = false;
+
+        // Web Audio API Context
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playEatSound() {
+            if(audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const osc2 = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            osc.type = 'triangle';
+            osc2.type = 'square';
+            
+            // "Bite" arpeggio effect
+            osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+            osc.frequency.setValueAtTime(600, audioCtx.currentTime + 0.05);
+            osc.frequency.setValueAtTime(800, audioCtx.currentTime + 0.1);
+            
+            osc2.frequency.setValueAtTime(200, audioCtx.currentTime);
+            osc2.frequency.setValueAtTime(300, audioCtx.currentTime + 0.05);
+            
+            gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.1, audioCtx.currentTime + 0.1);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+            
+            osc.connect(gainNode);
+            osc2.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            osc.start();
+            osc2.start();
+            osc.stop(audioCtx.currentTime + 0.2);
+            osc2.stop(audioCtx.currentTime + 0.2);
+        }
+
+        function playMoveSound() {
+            if(audioCtx.state === 'suspended') return;
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+            
+            gainNode.gain.setValueAtTime(0.02, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+            
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.05);
+        }
+
+        function playCrashSound() {
+            if(audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.3);
+            
+            gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+            
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.3);
+        }
+    
+        function initGame() {
+            boardWidth = Math.floor(board.clientWidth / GRID_SIZE) * GRID_SIZE;
+            boardHeight = Math.floor(board.clientHeight / GRID_SIZE) * GRID_SIZE;
+            
+            // Initial snake: head at 200, 40, body backwards
+            snake = [
+                {x: 200, y: 40}, // head
+                {x: 160, y: 40},
+                {x: 120, y: 40},
+                {x: 80, y: 40}
+            ];
+            direction = {x: 1, y: 0};
+            nextDirection = {x: 1, y: 0};
+            isGameOver = false;
+            hasStarted = false;
+            
+            gameOverScreen.classList.add("hidden");
+            startScreen.classList.remove("hidden");
+            if(systemLog) systemLog.style.opacity = "1";
+            
+            positionPortals();
+            drawSnake();
+            if(gameInterval) {
+                playEatSound();
+                        clearInterval(gameInterval);
+                gameInterval = null;
+            }
+        }
+
+        function startGame() {
+            if (hasStarted) return;
+            hasStarted = true;
+            startScreen.classList.add("hidden");
+            if(systemLog) systemLog.style.opacity = "0";
+            if(gameInterval) playEatSound();
+                        clearInterval(gameInterval);
+            gameInterval = setInterval(gameLoop, 200);
+        }
+
+        function positionPortals() {
+            // Position portals dynamically within the board, aligned to grid
+            const cols = boardWidth / GRID_SIZE;
+            const rows = boardHeight / GRID_SIZE;
+            
+            const positions = [
+                {x: Math.floor(cols * 0.2), y: Math.floor(rows * 0.4)}, // About
+                {x: Math.floor(cols * 0.7), y: Math.floor(rows * 0.2)}, // Projects
+                {x: Math.floor(cols * 0.4), y: Math.floor(rows * 0.7)}, // Skills
+                {x: Math.floor(cols * 0.8), y: Math.floor(rows * 0.8)}, // Socials
+                {x: Math.floor(cols * 0.9), y: Math.floor(rows * 0.4)}  // Contact
+            ];
+
+            portals.forEach((portal, idx) => {
+                let pos = positions[idx];
+                // Ensure within bounds
+                if (pos.x >= cols) pos.x = cols - 1;
+                if (pos.y >= rows) pos.y = rows - 1;
+                
+                portal.style.left = (pos.x * GRID_SIZE) + "px";
+                portal.style.top = (pos.y * GRID_SIZE) + "px";
+                portal.dataset.gridX = pos.x * GRID_SIZE;
+                portal.dataset.gridY = pos.y * GRID_SIZE;
+            });
+        }
+
+        function drawSnake() {
+            // Remove old snake elements
+            document.querySelectorAll(".snake-segment").forEach(el => el.remove());
+            
+            snake.forEach((segment, idx) => {
+                const el = document.createElement("div");
+                el.classList.add("snake-segment", "absolute", "w-[40px]", "h-[40px]", "snake-segment-shadow", "flex", "items-center", "justify-center");
+                el.style.left = segment.x + "px";
+                el.style.top = segment.y + "px";
+                
+                if (idx === 0) {
+                    // Head
+                    el.classList.add("bg-primary", "border-2", "border-primary-container", "z-30");
+                    el.innerHTML = '<div class="flex gap-1"><div class="w-1 h-1 bg-[var(--surface-lowest)] rounded-full"></div><div class="w-1 h-1 bg-[var(--surface-lowest)] rounded-full"></div></div>';
+                } else {
+                    // Body
+                    el.classList.add("bg-primary-container", "border", "border-primary", "z-20");
+                }
+                
+                board.appendChild(el);
+            });
+        }
+
+        function gameLoop() {
+            if(isGameOver || !hasStarted) return;
+            
+            direction = nextDirection;
+            const head = snake[0];
+            const newHead = {
+                x: head.x + direction.x * GRID_SIZE,
+                y: head.y + direction.y * GRID_SIZE
+            };
+
+            // Wall Collision
+            if (newHead.x < 0 || newHead.x >= boardWidth || newHead.y < 0 || newHead.y >= boardHeight) {
+                return handleGameOver();
+            }
+
+            // Self Collision
+            for (let i = 0; i < snake.length; i++) {
+                if (snake[i].x === newHead.x && snake[i].y === newHead.y) {
+                    return handleGameOver();
+                }
+            }
+
+            // Move snake
+            snake.unshift(newHead);
+
+            // Portal Collision
+            let atePortal = false;
+            portals.forEach(portal => {
+                if (parseInt(portal.dataset.gridX) === newHead.x && parseInt(portal.dataset.gridY) === newHead.y) {
+                    const url = portal.dataset.url;
+                    if(url && url !== '#') {
+                        playEatSound();
+                        clearInterval(gameInterval);
+                        window.location.href = url;
+                    }
+                    atePortal = true;
+                }
+            });
+
+            if (!atePortal) {
+                snake.pop(); // Remove tail if no portal eaten
+            }
+
+            if (!atePortal) playMoveSound();
+            drawSnake();
+        }
+
+        function handleGameOver() {
+            isGameOver = true;
+            playCrashSound();
+            playEatSound();
+                        clearInterval(gameInterval);
+            gameOverScreen.classList.remove("hidden");
+        }
+
+        restartBtn.addEventListener("click", () => {
+            initGame();
+        });
+
+        // Keyboard Controls
+        window.addEventListener("keydown", e => {
+            if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight","w","a","s","d"].includes(e.key)) {
+                e.preventDefault();
+                if(!hasStarted && !isGameOver) startGame();
+            }
+            if ((e.key === "ArrowUp" || e.key === "w") && direction.y !== 1) nextDirection = {x: 0, y: -1};
+            if ((e.key === "ArrowDown" || e.key === "s") && direction.y !== -1) nextDirection = {x: 0, y: 1};
+            if ((e.key === "ArrowLeft" || e.key === "a") && direction.x !== 1) nextDirection = {x: -1, y: 0};
+            if ((e.key === "ArrowRight" || e.key === "d") && direction.x !== -1) nextDirection = {x: 1, y: 0};
+        });
+
+        // Basic Swipe Controls
+        let touchStartX = 0;
+        let touchStartY = 0;
+        board.addEventListener('touchstart', e => {
+            if(!hasStarted && !isGameOver) startGame();
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, {passive: true});
+
+        board.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const dx = touchEndX - touchStartX;
+            const dy = touchEndY - touchStartY;
+            
+            if (Math.abs(dx) > Math.abs(dy)) {
+                if (dx > 30 && direction.x !== -1) nextDirection = {x: 1, y: 0};
+                else if (dx < -30 && direction.x !== 1) nextDirection = {x: -1, y: 0};
+            } else {
+                if (dy > 30 && direction.y !== -1) nextDirection = {x: 0, y: 1};
+                else if (dy < -30 && direction.y !== 1) nextDirection = {x: 0, y: -1};
+            }
+        }, {passive: true});
+
+        // Start
+        initGame();
+        
+        // Re-init on resize to update board bounds and portals
+        window.addEventListener("resize", () => {
+            if(!isGameOver) initGame();
+        });
+
+        // Fix for browser back button (BFCache)
+        window.addEventListener("pageshow", (event) => {
+            if (event.persisted) {
+                initGame();
+            }
+        });
+    });
+</script>
+
+<script id="progress-tracker">
+    (function() {
+        const pages = ['index.html', 'about.html', 'projects.html', 'skills.html', 'contact.html'];
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        let visited = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+        if (pages.includes(currentPage) && !visited.includes(currentPage)) {
+            visited.push(currentPage);
+            localStorage.setItem('visitedPages', JSON.stringify(visited));
+        }
+        
+        const count = visited.length;
+        const total = pages.length;
+        
+        document.querySelectorAll('.progress-text').forEach(el => {
+            el.textContent = `Progress: ${count}/${total}`;
+        });
+
+        // Update about.html specific progress bar if exists
+        const percentText = document.getElementById('progress-percent');
+        if (percentText) {
+            const percent = Math.round((count / total) * 100);
+            percentText.textContent = `${percent}%`;
+            
+            const bars = document.querySelectorAll('.progress-segment');
+            bars.forEach((bar, idx) => {
+                if (idx < count) {
+                    bar.classList.remove('bg-surface-dim');
+                    bar.classList.add('bg-primary');
+                } else {
+                    bar.classList.remove('bg-primary');
+                    bar.classList.add('bg-surface-dim');
+                }
+            });
+        }
+    })();
+</script>
+</body></html>

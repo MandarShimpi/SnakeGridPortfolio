@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills | Mandar's Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "var(--surface-dim)",
+                    "secondary-fixed-dim": "#a6d64d",
+                    "secondary-container": "#c2f366",
+                    "inverse-on-surface": "#cfffaa",
+                    "secondary": "#496800",
+                    "on-tertiary": "#ffffff",
+                    "surface": "var(--surface-color)",
+                    "on-primary-fixed": "#0a2000",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#131f00",
+                    "outline": "#73796b",
+                    "on-background": "var(--text-color)",
+                    "surface-container-highest": "#b9f38f",
+                    "on-tertiary-fixed-variant": "#910807",
+                    "outline-variant": "var(--border-color)",
+                    "surface-tint": "#3f6921",
+                    "surface-container-low": "#daffbb",
+                    "background": "var(--bg-color)",
+                    "primary": "var(--primary-color)",
+                    "secondary-fixed": "#c2f366",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#b9f38f",
+                    "on-surface-variant": "var(--text-muted)",
+                    "on-tertiary-container": "#ffe6e2",
+                    "inverse-primary": "#a3d47f",
+                    "on-secondary-container": "var(--hard-shadow-color)",
+                    "surface-container-high": "#bef994",
+                    "on-primary-container": "var(--on-primary-container)",
+                    "surface-container": "var(--surface-container)",
+                    "inverse-surface": "#163800",
+                    "tertiary-fixed": "#ffdad5",
+                    "on-primary-fixed-variant": "#285009",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#364e00",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#bff199",
+                    "primary-container": "var(--primary-container)",
+                    "surface-bright": "var(--surface-bright)",
+                    "tertiary-container": "#c53327",
+                    "surface-container-lowest": "var(--surface-lowest)",
+                    "on-surface": "var(--text-color)",
+                    "tertiary": "#a21911",
+                    "on-tertiary-fixed": "#410000",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "primary-fixed-dim": "#a3d47f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base-unit": "8px",
+                    "grid-tile": "40px",
+                    "margin-sm": "16px",
+                    "gutter": "1px",
+                    "margin-md": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+
+        :root {
+            --bg-color: #eeffdc;
+            --text-color: #0a2000;
+            --text-muted: #43493c;
+            --primary-color: #335c15;
+            --primary-container: #4a752c;
+            --on-primary-container: #c7faa1;
+            --surface-color: #eeffdc;
+            --surface-bright: #eeffdc;
+            --surface-lowest: #ffffff;
+            --surface-container: #c4ff99;
+            --surface-dim: #b1ea88;
+            --grid-color: rgba(0,0,0,0.05);
+            --border-color: #c3c9b8;
+            --header-bg: rgba(255, 255, 255, 0.9);
+            --card-bg: #ffffff;
+            --shadow-color: var(--shadow-color);
+            --hard-shadow-color: var(--hard-shadow-color);
+        }
+        .dark {
+            --bg-color: #0a1405;
+            --text-color: #e0f0d0;
+            --text-muted: #a0b090;
+            --primary-color: #a3d47f;
+            --primary-container: #285009;
+            --on-primary-container: #bff199;
+            --surface-color: #12200a;
+            --surface-bright: #12200a;
+            --surface-lowest: #050a02;
+            --surface-container: #1a2e0e;
+            --surface-dim: #1a2e0e;
+            --grid-color: rgba(255,255,255,0.05);
+            --border-color: #2d3824;
+            --header-bg: rgba(10, 20, 5, 0.9);
+            --card-bg: #0d1a07;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --hard-shadow-color: #000000;
+        }
+
+        .grid-pattern {
+            background-image: radial-gradient(circle, #c3c9b8 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+
+<script id="theme-manager">
+    (function() {
+        const theme = localStorage.getItem('theme') || 'system';
+        const html = document.documentElement;
+        
+        function applyTheme(t) {
+            if (t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                html.classList.remove('light');
+            } else {
+                html.classList.remove('dark');
+                html.classList.add('light');
+            }
+        }
+        
+        applyTheme(theme);
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (localStorage.getItem('theme') === 'system') {
+                applyTheme('system');
+            }
+        });
+    })();
+</script>
+
+</head>
+<body class="transition-colors duration-300 bg-background font-body-lg text-on-background min-h-screen grid-pattern">
+<!-- TopNavBar -->
+<header class="bg-[var(--surface-lowest)]/90 dark:bg-[var(--header-bg)] backdrop-blur-sm fixed top-0 w-full border-b border-[var(--border-color)] dark:border-[var(--border-color)] z-50">
+<nav class="flex justify-between items-center h-16 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<div class="text-xl font-black tracking-tighter text-green-700 dark:text-green-500 uppercase">Mandar's Portfolio</div>
+<div class="hidden md:flex gap-8 items-center font-['Inter'] text-sm font-medium tracking-tight">
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-green-700 dark:hover:text-green-500 transition-colors cursor-pointer active:scale-95" href="projects.html">Work</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-green-700 dark:hover:text-green-500 transition-colors cursor-pointer active:scale-95" href="about.html">About</a>
+<a class="text-green-700 dark:text-green-500 border-b-2 border-green-700 dark:border-green-500 pb-1 cursor-pointer active:scale-95" href="skills.html">Skills</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-green-700 dark:hover:text-green-500 transition-colors cursor-pointer active:scale-95" href="contact.html">Contact</a>
+</div>
+<div class="text-green-700 dark:text-green-500 font-['Inter'] text-sm font-medium tracking-tight"><span class="progress-text progress-text">Progress: 0/5</span></div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Back Navigation -->
+<div class="mb-12">
+<button class="flex items-center gap-2 text-primary font-label-bold group cursor-pointer active:scale-95 transition-all" onclick="window.location.href='index.html'">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="uppercase tracking-widest">Return to Dashboard</span>
+</button>
+</div>
+<!-- Header Section -->
+<div class="mb-16">
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-4">Technical Proficiency</h1>
+<p class="text-[var(--text-muted)] max-w-2xl font-body-lg">Building digital ecosystems through structured logic and sustainable growth. Every skill is a tile in the larger architecture of a product.</p>
+</div>
+<!-- Skills Grid (The Game Board) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter bg-outline-variant border border-[var(--border-color)]">
+<!-- Bento Box: Core Stack -->
+<div class="md:col-span-8 bg-surface p-8 border-r border-b border-[var(--border-color)]">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="text-label-bold font-label-bold text-primary uppercase block mb-2 tracking-widest">Intelligence Core</span>
+<h2 class="text-headline-md font-headline-md">AI & Machine Learning</h2>
+</div>
+<span class="material-symbols-outlined text-surface-tint">grid_view</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="bg-[var(--surface-lowest)] border border-[var(--border-color)] p-4 flex items-center gap-3 cursor-pointer hover:border-primary transition-all group active:scale-95">
+<div class="w-8 h-8 bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm">memory</span>
+</div>
+<span class="font-label-bold text-on-surface">PYTHON / C++</span>
+</div>
+<div class="bg-[var(--surface-lowest)] border border-[var(--border-color)] p-4 flex items-center gap-3 cursor-pointer hover:border-primary transition-all group active:scale-95">
+<div class="w-8 h-8 bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm">model_training</span>
+</div>
+<span class="font-label-bold text-on-surface">PYTORCH / TENSORFLOW</span>
+</div>
+<div class="bg-[var(--surface-lowest)] border border-[var(--border-color)] p-4 flex items-center gap-3 cursor-pointer hover:border-primary transition-all group active:scale-95">
+<div class="w-8 h-8 bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm">analytics</span>
+</div>
+<span class="font-label-bold text-on-surface">SCIKIT-LEARN</span>
+</div>
+<div class="bg-[var(--surface-lowest)] border border-[var(--border-color)] p-4 flex items-center gap-3 cursor-pointer hover:border-primary transition-all group active:scale-95">
+<div class="w-8 h-8 bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-sm">data_thresholding</span>
+</div>
+<span class="font-label-bold text-on-surface">PANDAS / NUMPY</span>
+</div>
+</div>
+</div>
+<!-- Bento Box: Design Systems -->
+<div class="md:col-span-4 bg-[var(--surface-lowest)] p-8 border-b border-[var(--border-color)]">
+<span class="text-label-bold font-label-bold text-primary uppercase block mb-2 tracking-widest">Data Architecture</span>
+<h2 class="text-headline-md font-headline-md mb-6">Data Engineering</h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-[var(--border-color)] pb-2">
+<span class="font-body-sm text-[var(--text-muted)]">SQL / NoSQL Optimization</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+</div>
+<div class="flex items-center justify-between border-b border-[var(--border-color)] pb-2">
+<span class="font-body-sm text-[var(--text-muted)]">ETL Pipeline Design</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-surface-variant"></div>
+</div>
+</div>
+<div class="flex items-center justify-between border-b border-[var(--border-color)] pb-2">
+<span class="font-body-sm text-[var(--text-muted)]">Vector Databases (Pinecone)</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Box: Interactive Visualization -->
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 bg-surface-container border-b border-[var(--border-color)]">
+<div class="p-8 border-r border-[var(--border-color)]">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h3 class="font-headline-md text-headline-md mb-2">Deep Learning</h3>
+<p class="text-body-sm text-[var(--text-muted)] mb-6">Neural Network architecture and fine-tuning.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">Transformers</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">NLP / LLMs</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">Computer Vision</span>
+</div>
+</div>
+<div class="p-8 border-r border-[var(--border-color)]">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+<h3 class="font-headline-md text-headline-md mb-2">Deployment</h3>
+<p class="text-body-sm text-[var(--text-muted)] mb-6">Serving models via API and Cloud Infrastructure.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">Docker</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">Streamlit / Flask</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">Docker / Kubernetes</span>
+</div>
+</div>
+<div class="p-8">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">insights</span>
+<h3 class="font-headline-md text-headline-md mb-2">MLOps</h3>
+<p class="text-body-sm text-[var(--text-muted)] mb-6">Monitoring model drift and pipeline health.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">Weights & Biases</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">MLflow</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-label-bold rounded-lg border border-primary/10">DVC</span>
+</div>
+</div>
+</div>
+<!-- Visual Asset Section -->
+<div class="md:col-span-7 bg-[var(--surface-lowest)] p-8 border-r border-[var(--border-color)]">
+<div class="h-64 bg-surface-container-low border border-[var(--border-color)] relative overflow-hidden group">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-40 group-hover:scale-105 transition-transform duration-500" data-alt="A high-tech digital grid interface with glowing green lines and abstract geometric data structures reminiscent of a professional motherboard layout. The scene is illuminated by soft light-mode overhead lighting, casting minimal shadows and highlighting the clean, emerald green accents of the UI elements. This professional workspace feels both futuristic and mathematically precise, aligning with a verdant minimalist design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD7gCKNsH2TTxALRl0EYtQU82rKdcem-1ln-7oGDesE9z6lsZady7do8JILoV1HhtUCoDMhG6pGy6JKCBgUH8WHcE2QNN8uBHO5YcynnVh4Pt3mWsKKK7noqxaO5WzNGm9-jQC8eL659BDiPuvYyxPHdlIDQw14xamt9-CgFHTH12kiHwLa3KsTSgwBFMcnDnps_c7BtPckBIVH1xqE95r7AMJ3azmAiVF9lZO-kiRw10dpvl24zBNuhYCkCfcTbpLWEF84Ch-9tOH"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary p-6 shadow-[4px_4px_0px_0px_#163800]">
+<span class="font-headline-md text-white">SYSTEM READY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Soft Skills / Additional -->
+<div class="md:col-span-5 bg-surface-dim p-8">
+<span class="text-label-bold font-label-bold text-on-background uppercase block mb-4 tracking-widest">Growth Nodes</span>
+<div class="space-y-6">
+<div class="group cursor-pointer">
+<h4 class="font-label-bold text-primary mb-1">ALGORITHMIC OPTIMIZATION</h4>
+<div class="w-full h-2 bg-[var(--surface-lowest)]/50 overflow-hidden">
+<div class="h-full bg-primary w-4/5"></div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<h4 class="font-label-bold text-primary mb-1">DATA-DRIVEN DECISION MAKING</h4>
+<div class="w-full h-2 bg-[var(--surface-lowest)]/50 overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<h4 class="font-label-bold text-primary mb-1">MATHEMATICAL MODELING</h4>
+<div class="w-full h-2 bg-[var(--surface-lowest)]/50 overflow-hidden">
+<div class="h-full bg-primary w-11/12"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[var(--border-color)] dark:border-[var(--border-color)] py-8 bg-[var(--surface-lowest)] dark:bg-gray-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-screen-2xl mx-auto gap-4">
+<div class="font-['Inter'] text-xs font-normal text-[var(--text-muted)] dark:text-[var(--text-muted)]">© 2024 Verdant Grid. Built on the Grid.</div>
+<div class="flex gap-6 font-['Inter'] text-xs font-normal">
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-green-700 dark:hover:text-green-500 hover:underline underline-offset-4 transition-all duration-200" href="https://github.com/MandarShimpi" target="_blank">GitHub</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-green-700 dark:hover:text-green-500 hover:underline underline-offset-4 transition-all duration-200" href="https://www.linkedin.com/in/shimpimandar/" target="_blank">LinkedIn</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-green-700 dark:hover:text-green-500 hover:underline underline-offset-4 transition-all duration-200" href="contact.html">Resume</a>
+<a class="text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-green-700 dark:hover:text-green-500 hover:underline underline-offset-4 transition-all duration-200" href="contact.html">Email</a>
+</div>
+</div>
+</footer>
+
+<script id="progress-tracker">
+    (function() {
+        const pages = ['index.html', 'about.html', 'projects.html', 'skills.html', 'contact.html'];
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        let visited = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+        if (pages.includes(currentPage) && !visited.includes(currentPage)) {
+            visited.push(currentPage);
+            localStorage.setItem('visitedPages', JSON.stringify(visited));
+        }
+        
+        const count = visited.length;
+        const total = pages.length;
+        
+        document.querySelectorAll('.progress-text').forEach(el => {
+            el.textContent = `Progress: ${count}/${total}`;
+        });
+
+        // Update about.html specific progress bar if exists
+        const percentText = document.getElementById('progress-percent');
+        if (percentText) {
+            const percent = Math.round((count / total) * 100);
+            percentText.textContent = `${percent}%`;
+            
+            const bars = document.querySelectorAll('.progress-segment');
+            bars.forEach((bar, idx) => {
+                if (idx < count) {
+                    bar.classList.remove('bg-surface-dim');
+                    bar.classList.add('bg-primary');
+                } else {
+                    bar.classList.remove('bg-primary');
+                    bar.classList.add('bg-surface-dim');
+                }
+            });
+        }
+    })();
+</script>
+</body></html>
